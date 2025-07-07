@@ -88,6 +88,11 @@ Once the application is running, you can interact with the API through the gatew
 
 Contributions are welcome! Please submit a pull request or open an issue for any enhancements or bug fixes.
 
+## Author
+
+Created by **Sushant Sonbarse**  
+GitHub: [https://github.com/sonbarse17](https://github.com/sonbarse17)
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
