@@ -67,7 +67,7 @@ async function createProject() {
     const status = document.getElementById('projectStatus').value;
     
     try {
-        const response = await fetch(`${API_BASE}/projects/projects`, {
+        const response = await fetch(`${API_BASE}/projects`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, description, status })
@@ -89,7 +89,7 @@ async function createProject() {
 
 async function loadProjects() {
     try {
-        const response = await fetch(`${API_BASE}/projects/projects`);
+        const response = await fetch(`${API_BASE}/projects`);
         const projects = await response.json();
         
         const projectsList = document.getElementById('projectsList');
@@ -110,7 +110,7 @@ async function createTask() {
     const description = document.getElementById('taskDesc').value;
     
     try {
-        const response = await fetch(`${API_BASE}/tasks/tasks`, {
+        const response = await fetch(`${API_BASE}/tasks`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ title, description })
@@ -131,7 +131,7 @@ async function createTask() {
 
 async function loadTasks() {
     try {
-        const response = await fetch(`${API_BASE}/tasks/tasks`);
+        const response = await fetch(`${API_BASE}/tasks`);
         const tasks = await response.json();
         
         const tasksList = document.getElementById('tasksList');
@@ -149,7 +149,7 @@ async function loadTasks() {
 
 async function loadUsers() {
     try {
-        const response = await fetch(`${API_BASE}/users/users`);
+        const response = await fetch(`${API_BASE}/users`);
         const users = await response.json();
         
         const usersList = document.getElementById('usersList');
