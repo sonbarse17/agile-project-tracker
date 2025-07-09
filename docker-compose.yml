@@ -65,6 +65,17 @@ services:
     networks:
       - scrum-network
 
+  frontend:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./gateway/frontend:/usr/share/nginx/html
+    depends_on:
+      - gateway
+    networks:
+      - scrum-network
+
 volumes:
   mongodb_data:
 
