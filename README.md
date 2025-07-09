@@ -84,6 +84,13 @@ The project is organized into several microservices, each with its own responsib
 
 Once the application is running, you can interact with the API through the gateway. Refer to the individual service README files for specific API endpoints and usage instructions.
 
+## Screenshots
+
+### Application Interface
+![Scrum Project Management Application](./docs/demo.png)
+
+The application provides a clean, intuitive interface for managing scrum projects with sections for authentication, projects, tasks, and user management.
+
 ## Contributing
 
 Contributions are welcome! Please submit a pull request or open an issue for any enhancements or bug fixes.

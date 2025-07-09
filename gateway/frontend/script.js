@@ -1,4 +1,4 @@
-const API_BASE = '/api';
+const API_BASE = 'http://localhost:3000/api';
 
 function showSection(sectionName) {
     document.querySelectorAll('.section').forEach(section => {
