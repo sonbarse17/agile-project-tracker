@@ -26,7 +26,7 @@ Object.keys(serviceRoutes).forEach(route => {
     app.use(`/api${route}`, createProxyMiddleware({ 
         target: serviceRoutes[route], 
         changeOrigin: true,
-        pathRewrite: { [`^/api${route}`]: route }
+        pathRewrite: { [`^/api${route}`]: '' }
     }));
 });
 
