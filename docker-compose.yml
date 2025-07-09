@@ -66,11 +66,10 @@ services:
       - scrum-network
 
   frontend:
-    image: nginx:alpine
+    build:
+      context: ./gateway/frontend
     ports:
       - "8080:80"
-    volumes:
-      - ./gateway/frontend:/usr/share/nginx/html
     depends_on:
       - gateway
     networks:
