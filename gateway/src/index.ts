@@ -1,7 +1,10 @@
 import express from 'express';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import cors from 'cors';
+import dotenv from 'dotenv';
 import path from 'path';
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;

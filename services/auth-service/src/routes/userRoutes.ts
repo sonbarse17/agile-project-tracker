@@ -12,8 +12,8 @@ router.post('/register', async (req, res) => {
         const user = new User({ username, email, password: hashedPassword });
         await user.save();
         res.status(201).json({ message: 'User created successfully' });
-    } catch (error) {
-        res.status(400).json({ error: error.message });
+    } catch (error: any) {
+        res.status(400).json({ error: error.message || 'Registration failed' });
     }
 });
 
@@ -26,8 +26,8 @@ router.post('/login', async (req, res) => {
         }
         const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET || 'secret');
         res.json({ token, user: { id: user._id, username: user.username, email: user.email } });
-    } catch (error) {
-        res.status(400).json({ error: error.message });
+    } catch (error: any) {
+        res.status(400).json({ error: error.message || 'Login failed' });
     }
 });
 

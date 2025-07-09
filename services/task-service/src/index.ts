@@ -1,6 +1,9 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -8,6 +11,9 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Mongoose configuration
+mongoose.set('strictQuery', false);
 
 // MongoDB connection
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://mongodb:27017/task-service')
