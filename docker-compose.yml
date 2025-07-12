@@ -57,6 +57,8 @@ services:
       context: ./gateway
     ports:
       - "3000:3000"
+    environment:
+      - CORS_ORIGIN=${CORS_ORIGIN}
     depends_on:
       - auth-service
       - project-service
@@ -68,6 +70,8 @@ services:
   frontend:
     build:
       context: ./gateway/frontend
+      args:
+       - VITE_API_URL=${PUBLIC_IP}:3000/api
     ports:
       - "8080:80"
     depends_on:
